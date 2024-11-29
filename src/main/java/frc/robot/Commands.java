@@ -29,7 +29,8 @@ public static Command simpleAuto(ArcadeDrive drive) {
             // Stop driving at the end of the command
             interrupt -> drive.arcadeDrive(0, 0),
             // End the command when the robot's driven distance exceeds the desired value
-            () -> m_timer.getTime() >= 1500 //needs to be a tuned value -> encoders are not assumed on the CAN Spark max controller (I might be wrong about this)
+            () -> m_timer.getTime() >= 1500 //needs to be a tuned value -> encoders are not assumed on
+            // the CAN Spark max controller (I might be wrong about this)
             m_timer.stop();
 
             // Require the drive subsystem
